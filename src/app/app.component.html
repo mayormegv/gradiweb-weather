@@ -10,10 +10,13 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<div class="container bg-priimary">
+<div class="container">
 
   <div class="jumbotron">
-      <div class="container-fluid bg-white" *ngIf="responseWeather">
+      
+        <img class="col-lg-12 col-md-12 col-sm-12 col-12" src="https://www.gradiweb.com/wp-content/themes/gradiwebtemplate/img/icons/Icono.png" id="logoGradiWeb">
+
+      <div class="container bg-white boxBorder" *ngIf="responseWeather" style="padding: 10px;">
         
         <div id="weatherDay">
           <ul id="liste_left_link">
@@ -34,6 +37,7 @@
           <div class="row boxBorder justify-content-center align-items-center">
             <div class="col-lg-12 bg-light text-light boxBorder" id="imgContainer">
               <div class="row">
+                <img src="https://image.flaticon.com/icons/png/512/16/16778.png" id="localizationIcon">
                 <h5 class="nameCity col-lg-8">{{responseWeather.name}}</h5>
               </div>
               
@@ -41,24 +45,24 @@
           </div>
           
           <div class="card-group">
-            <div class="card" style="margin: 5px;">
+            <div class="card widthCard" style="margin: 5px;">
               <div class="card-body">
-                <h5 class="card-title" style="margin-bottom: 50px;"><b>3 Days</b> Forecast</h5>
+                <h5 class="card-title" id="titleForecast" style="margin-bottom: 50px;"><b>3 Days</b> Forecast</h5>
 
                 <div class="justify-content-center align-items-center">
                   <div class="row text-center justify-content-center cardStyle" *ngFor="let item of forecast; let indice=index">
                     <div class="row" *ngIf="urlsCityDays" style="padding: 4px;">
-                      <div class="col-lg-4 justify-content-center align-items-center" *ngFor="let itemDos of item.weather" style="border-radius: 10px;">
+                      <div class="col-6 col-sm-12 col-md-4 col-lg-4 justify-content-center align-items-center" id="imgForecast" *ngFor="let itemDos of item.weather" style="border-radius: 10px;">
                         <img src="{{urlsCityDays[indice]}}" width="100%">
                       </div>
   
-                      <div class="col-lg-8 justify-content-center align-items-center text-left" *ngFor="let itemDos of item.weather" style="border-radius: 10px;">
+                      <div class="col-lg-8 col-md-4 col-sm-6 col-12 justify-content-center align-items-center text-left" *ngFor="let itemDos of item.weather" style="border-radius: 10px;">
                         <h6 class="textCard"><b>{{nameDays[indice]}}</b></h6>
                         <h6 class="textCard">{{itemDos.main}}</h6>
                       </div>
                     </div>
                     
-                    <div class="card col-lg-3 justify-content-center align-items-center cardTempStyle" style="border: 0px solid #8433FF; border-radius: 10px; position: absolute; right: 8px; height: 52px;">
+                    <div class="card col-lg-3 col-md-3 col-sm-12 col-12 justify-content-center align-items-center cardTempStyle">
                       <h6 class="textCard">{{item.main.temp_max}}°</h6>
                     </div>
                   </div>
@@ -66,90 +70,111 @@
               </div>
             </div>
             
-            <div class="card justify-content-center align-items-center" style="margin: 5px;">
+            <div class="card widthCard justify-content-center align-items-center" id="cardPlaceToVisit" style="margin: 5px;">
               <div class="container-fluid">
                 
                   <h5 class="card-title"><b>Place to</b> Visit</h5>
-                <div class="card-body col-lg-12" id="imgVisitPlace">
-                  
+                <div class="card-body col-lg-12 col-md-12 col-sm-12 col-12" id="imgVisitPlace">
+                  <div class="row">
+                    <div>
+                      <!--<img class="col-lg-3" src="https://image.flaticon.com/icons/png/512/16/16778.png">-->
+                    </div>
+
+                    <h6 class="col-lg-12 col-md-12 col-sm-12 col-12 tagImage">Tematic</h6>
+                    <h6 class="col-lg-12 col-md-12 col-sm-12 col-12 tagImage">London</h6>
+                  </div>
                 </div>
 
             </div>
             </div>
         
-            <div class="card justify-content-center align-items-center" style="margin: 5px; padding: 5px;">
-              <div class="row bg-light text-center justify-content-center cardStyle" style="height: 40px;">
-                <div class="card col-lg-4 justify-content-center align-items-center text-center">
+            <div class="card widthCard justify-content-center align-items-center" id="cardTopReviews" style="margin: 5px; padding: 5px;">
+              <div class="row text-center justify-content-center cardStyle" style="height: 40px;">
+                <div class="card col-lg-4 col-md-4 col-sm-12 col-12 justify-content-center align-items-center text-center">
                   <h6 style="font-size: 8px;">+ Top Reviews</h6>
                 </div>
                 
-                <div class="col-lg-2 text-center justify-content-center align-items-center imgReviews" style="border-radius: 5px;">
+                <div class="col-lg-2 col-md-4 col-sm-12 col-12 text-center justify-content-center align-items-center imgReviews" style="border-radius: 5px;">
                   
                 </div>
-                <div class="col-lg-2 text-center justify-content-center align-items-center imgReviews" style="border-radius: 5px;">
+                <div class="col-lg-2 col-md-4 col-sm-12 col-12 text-center justify-content-center align-items-center imgReviews" style="border-radius: 5px;">
                   
                 </div>
-                <div class="col-lg-2 text-center justify-content-center align-items-center imgReviews" style="border-radius: 5px;">
+                <div class="col-lg-2 col-md-4 col-sm-12 col-12 text-center justify-content-center align-items-center imgReviews" style="border-radius: 5px;">
                   
                 </div>
-                <div class="col-lg-2 text-center justify-content-center align-items-center imgReviews" style="border-radius: 5px;">
+                <div class="col-lg-2 col-md-4 col-sm-12 col-12 text-center justify-content-center align-items-center text-center" style="border-radius: 5px; background-color: #8433FF;">
                   
                 </div>
               </div>
 
-              <div class="card-body col-lg-10" id="imgVisitPlaceReviewsSmall">
-                  
+              <div class="card-body col-lg-10 col-md-10 col-sm-12 col-12" id="imgVisitPlaceReviewsSmall">
+                <div class="row">
+                  <div>
+                    <!--<img class="col-lg-3" src="https://image.flaticon.com/icons/png/512/16/16778.png">-->
+                  </div>
+
+                  <h6 class="col-lg-12 col-md-12 col-sm-12 col-12 tagImage" style="font-size: 10px;">Tematic</h6>
+                  <h6 class="col-lg-12 col-md-12 col-sm-12 col-12 tagImage" style="font-size: 10px;">London</h6>
+                </div>
               </div>
               <div class="container-fluid">
-                <div class="card-body col-lg-12" id="imgVisitPlaceReviewsLarge" style="height: 150px;">
-                  
+                <div class="card-body col-lg-12 col-md-12 col-sm-12 col-12" id="imgVisitPlaceReviewsLarge" style="height: 150px;">
+                  <div class="row">
+                    <div>
+                      <!--<img class="col-lg-3" src="https://image.flaticon.com/icons/png/512/16/16778.png">-->
+                    </div>
+
+                    <h6 class="col-lg-12 col-md-12 col-sm-12 col-12 tagImage">Tematic</h6>
+                    <h6 class="col-lg-12 col-md-12 col-sm-12 col-12 tagImage">City</h6>
+                  </div>
                 </div>
-                <button class="col-lg-3" style="border: 0px solid transparent; color: #C2DCE5; font-size: 25px; position: absolute; top: 161px; left: 169px; height: 150px; border-radius: 100px; background-color: rgba(132, 51, 255, 0.900);">
+                <button class="col-lg-3 col-md-3 col-sm-12 col-12" style="border: 0px solid transparent; color: #C2DCE5; font-size: 25px; position: absolute; top: 167px; left: 171px; height: 150px; border-radius: 100px; background-color: rgba(132, 51, 255, 0.900);">
                   +
                 </button>
               </div>
             </div>
 
-            <div class="card bg-light" style="margin: 5px;" *ngIf="responseWeatherParis">
+            <div class="card widthCard bg-light" id="cardCollaborators" style="margin: 5px;" *ngIf="responseWeatherParis">
 
               <div class="row bg-light text-center justify-content-center cardStyle">
-                <div class="card col-lg-4 justify-content-center align-items-center cardTempStyle" style="border: 0px solid #8433FF; border-radius: 10px; height: 70px; position: relative; left: 0px; top: 0px; z-index: 100; background-color: #C2DCE5;">
+                <div class="card col-lg-4 col-md-4 col-sm-12 col-12 justify-content-center align-items-center cardTempStyle" style="border: 0px solid #8433FF; border-radius: 10px; height: 70px; position: relative; left: 0px; top: 0px; z-index: 100; background-color: #C2DCE5;">
                   <img src="{{urlImageParis}}" width="100%">
                 </div>
 
-                <div class="col-lg-8 text-center" style="padding: 5px; height: 70px; border-radius: 10px;">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-12 text-center" style="padding: 5px; height: 70px; border-radius: 10px;">
                   <h6 class="font-weight-normal"><b>{{responseWeatherParis.main.temp}}</b>°</h6>
                   <h6 class="font-weight-normal">{{responseWeatherParis.name}}</h6>
                   <h6 *ngIf="responseWeatherParis.sys.country == 'FR'" class="textCard">Francia</h6>
                 </div>
                 
                 <div>
-                  <h6 class="textCard" style="margin-top: 20px;">Humidity: {{responseWeatherParis.main.humidity}}% {{responseWeatherParis.base}} | {{responseWeatherParis.wind.speed}}km/h</h6>
+                  <h6 class="textCard textHumidity" style="margin-top: 20px;">Humidity: {{responseWeatherParis.main.humidity}}% {{responseWeatherParis.base}} | {{responseWeatherParis.wind.speed}}km/h</h6>
                 </div>
               </div>
 
-              <div class="row text-center bg-light justify-content-center cardStyle" style="position: absolute; left: 0px; top: -120px; z-index: 100;">
-                <div class="card col-lg-4 justify-content-center align-items-center cardTempStyle" style="border: 0px solid #8433FF; border-radius: 10px; height: 70px; position: relative; left: 0px; top: 0px; z-index: 100; background-color: #C2DCE5;">
+              <div class="row text-center bg-light justify-content-center cardStyle" id="cardAbsolute">
+                <div class="card col-lg-4 col-md-4 col-sm-12 col-12 justify-content-center align-items-center cardTempStyle" style="border: 0px solid #8433FF; border-radius: 10px; height: 70px; position: relative; left: 0px; top: 0px; z-index: 100; background-color: #C2DCE5;">
                   <img src="{{urlImageLyon}}" width="100%">
                 </div>
 
-                <div class="col-lg-8 text-center" style="padding: 5px; height: 70px; border-radius: 10px;">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-12 text-center" style="padding: 5px; height: 70px; border-radius: 10px;">
                   <h6 class="font-weight-normal"><b>{{responseWeatherLyon.main.temp}}</b>°</h6>
                   <h6 class="font-weight-normal">{{responseWeatherLyon.name}}</h6>
                   <h6 *ngIf="responseWeatherParis.sys.country == 'FR'" class="textCard">Francia</h6>
                 </div>
                 
                 <div>
-                  <h6 class="textCard" style="margin-top: 20px;">Humidity: {{responseWeatherLyon.main.humidity}}% {{responseWeatherLyon.base}} | {{responseWeatherLyon.wind.speed}}km/h</h6>
+                  <h6 class="textCard textHumidity" style="margin-top: 20px;">Humidity: {{responseWeatherLyon.main.humidity}}% {{responseWeatherLyon.base}} | {{responseWeatherLyon.wind.speed}}km/h</h6>
                 </div>
               </div>
 
               <div class="row text-center justify-content-center cardStyle" style="padding: 20px; background-color: white;">
-                <div class="card col-lg-12 justify-content-center align-items-center" style="border-radius: 10px; border: 0px solid transparent">
+                <div class="card col-lg-12 col-md-12 col-sm-12 col-12 justify-content-center align-items-center" style="border-radius: 10px; border: 0px solid transparent">
                   <button style="border-radius: 30px; color: #8433FF; border:0px solid transparent; font-size: 12px; background-color: rgba(194, 177, 219, 0.400); padding: 5px; width: 130px;">Add Locations</button>
                 </div>
 
-                <div class="card col-lg-12 justify-content-center align-items-center" style="border-radius: 10px; border: 0px solid transparent">
+                <div class="card col-lg-12 col-md-12 col-sm-12 col-12 justify-content-center align-items-center" id="addLocations" style="border-radius: 10px; border: 0px solid transparent">
                   <img src="https://thumbs.dreamstime.com/b/horizonte-de-la-ciudad-ilustraci%C3%B3n-del-vector-en-el-fondo-blanco-81171406.jpg" width="100%">
                 </div>
               </div>

@@ -28,7 +28,8 @@ export class AppComponent implements OnInit {
   urlsImage: UrlApp = {
     sun: "https://www.arartur.com.tr/images/content/1284811945.png",
     rain: "https://www.freeiconspng.com/uploads/cloud-rain-icon-2.png",
-    clouds: "https://www.freeiconspng.com/uploads/rain-cloud-icon-14.png"
+    clouds: "https://www.freeiconspng.com/uploads/rain-cloud-icon-14.png",
+    mist: "https://cdn4.iconfinder.com/data/icons/mini-material-design-weather-icons-single-color/32/mist-512.png"
   };
 
   constructor(private weatherService: WeatherService){
@@ -58,6 +59,9 @@ export class AppComponent implements OnInit {
           if(element.main == "Clear"){
             this.urlImageBogota = this.urlsImage.sun;
           }
+          if(element.main == "Mist" || element.main == "Fog"){
+            this.urlImageBogota = this.urlsImage.mist;
+          }
         });
       },
       
@@ -79,6 +83,9 @@ export class AppComponent implements OnInit {
           if(element.main == "Clear"){
             this.urlImageParis = this.urlsImage.sun;
           }
+          if(element.main == "Mist" || element.main == "Fog"){
+            this.urlImageParis = this.urlsImage.mist;
+          }
         });
       },
       error => console.log(error)
@@ -98,6 +105,9 @@ export class AppComponent implements OnInit {
           }
           if(element.main == "Clear"){
             this.urlImageLyon = this.urlsImage.sun;
+          }
+          if(element.main == "Mist" || element.main == "Fog"){
+            this.urlImageLyon = this.urlsImage.mist;
           }
         });
       },
@@ -131,10 +141,12 @@ export class AppComponent implements OnInit {
                   if(item.main == "Clear"){
                     this.urlsCityDays?.push(this.urlsImage.sun);
                   }
+                  if(item.main == "Mist" || item.main == "Mist"){
+                    this.urlsCityDays?.push(this.urlsImage.mist);
+                  }
                 });
             }
 
-            console.log("Urls", this.urlsCityDays);
             this.dayNow = day;
           });
       },

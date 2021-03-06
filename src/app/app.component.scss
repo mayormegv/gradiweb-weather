@@ -12,6 +12,14 @@ h1,h2,h3,h4,h5,h6{
     font-family: $font-stack;
 }
 
+#logoGradiWeb{
+    position: absolute;
+    z-index: 100;
+    top: 8px;
+    right: 220px;
+    width: 80px;
+}
+
 .card {
     border: 0px solid transparent;
 }
@@ -39,7 +47,7 @@ h1,h2,h3,h4,h5,h6{
     top: 150px;
     background-color: $color-purple;
     z-index: 100;
-    margin-left: -15px;
+    margin-left: -10px;
     border: 0px solid #1C6EA4;
     border-radius: 0px 20px 20px 20px;
     -webkit-box-shadow: 6px 18px 15px 6px rgba(0,0,0,0.24); 
@@ -111,6 +119,14 @@ a, button, img, input[type=submit] {
     transition: all .4s ease-in;
 }
 
+#localizationIcon{
+    width: 20px;
+    position: absolute;
+    left: 70px;
+    top: 83px;
+    z-index: 200;
+}
+
 .nameCity {
     position: absolute;
     left: 80px;
@@ -123,6 +139,11 @@ a, button, img, input[type=submit] {
 
 .cardTempStyle{
     background-color: #C2DCE5;
+    border: 0px solid #8433FF; 
+    border-radius: 10px; 
+    position: absolute;
+    right: 8px; 
+    height: 52px;
 }
 
 .cardStyle:first-child .cardTempStyle{
@@ -138,6 +159,11 @@ a, button, img, input[type=submit] {
     box-shadow: 1px 3px 20px 0 rgba(2, 0, 0, 0.300)!important;
     -webkit-box-shadow: 1px 3px 20px 0 rgba(2, 0, 0, 0.300)!important;
     -moz-box-shadow: 1px 3px 20px 0 rgba(2, 0, 0, 0.300)!important;
+}
+
+.tagImage {
+    color: white;
+    font-size: 12px;
 }
 
 #imgVisitPlace{
@@ -166,12 +192,230 @@ a, button, img, input[type=submit] {
     background-size: cover;
 }
 
+#imgPruebaCover{
+    background-size: cover;
+}
+
 .imgReviews{
-    background-image: url('https://www.arartur.com.tr/images/content/1284811945.png');
+    background-image: url('https://junglamoderna.com/wp-content/uploads/2019/02/esta-persona-no-exist-297x300.jpg');
     background-repeat: no-repeat, repeat;
     background-size: cover;
 }
 
+.imgReviews:nth-child(2){
+    background-image: url('https://1.bp.blogspot.com/-YOTLTm6nV6g/XPlLCV9qvII/AAAAAAAAywU/9HiGMUP-raUfxzNlx-0yHllRmRTiZJwbQCLcBGAs/s400/1559795547.446815_-_ecf78566887779bf140bc6a122c50d3e.png');
+}
+
+.imgReviews:nth-child(3){
+    background-image: url('https://1.bp.blogspot.com/-8NHYU_WDTOg/XPlLBwjiTaI/AAAAAAAAywI/IgI-ww4Lg_48ta_dSHS21l5cQcOUg8o_QCLcBGAs/s400/1559795256.8981142_-_e73f43a5c6bebd00977dcfddcf6a9693.png');
+}
+
+.imgReviews:nth-child(4){
+    background-image: url('https://1.bp.blogspot.com/-qA-roTYYm2w/XPlLCKL7eTI/AAAAAAAAywQ/X0viBB6bxIIhkyLEL0fRsDiLgTcGiUVjgCLcBGAs/s400/1559795428.3093624_-_bbe58eff772beaf5d71c8a0c578f5c1e.png');
+}
+
+#cardAbsolute{
+    position: absolute; 
+    left: 0px; 
+    top: -120px; 
+    z-index: 100;
+}
+
 .textCard{
     font-size: 11px;
+}
+
+//Inicio de media queries max-width: 1200px
+
+@media only screen and (max-width: 1200px) {
+    .col-lg-4 {
+        width: 100%;
+    }
+
+    .widthCard{
+        width: 47%;
+        float: left;
+    }
+
+    .row {
+        width: 100%;
+    }
+
+    .card-group{
+        display: block;
+    }
+
+    #cardTopReviews, #cardPlaceToVisit {
+        display: none;
+    }
+
+    #titleForecast{
+        display: none;
+    }
+
+    #cardCollaborators{
+        width: 43%;
+        height: 100%;
+        float: right;
+    }
+
+    #cardAbsolute{
+        top: -140px;
+    }
+
+    .cardTempStyle{
+        height: 93px;
+    }
+
+    .textCard{
+        font-size: 20px;
+    }
+
+    .jumbotron{
+        display: flex;
+    }
+}
+
+//Inicio de media queries max-width: 992px
+
+@media only screen and (max-width: 992px) {
+    .col-lg-4 {
+        width: 100%;
+    }
+
+    .widthCard{
+        width: 100%;
+        float: left;
+    }
+
+    .widthCard img{
+        width: 50%;
+    }
+
+    .row {
+        width: 100%;
+    }
+
+    .card-group{
+        display: block;
+    }
+
+    #cardTopReviews, #cardPlaceToVisit {
+        display: none;
+    }
+
+    #titleForecast{
+        display: none;
+    }
+
+    #cardCollaborators{
+        width: 95%;
+        float: right;
+    }
+
+    #cardCollaborators .row{
+        height: 100px;
+    }
+
+    #addLocations{
+        display: none;
+    }
+
+    #cardAbsolute{
+        position: static;
+    }
+
+    .cardTempStyle{
+        height: 84px;
+    }
+
+    .textCard{
+        font-size: 20px;
+    }
+
+    .textHumidity{
+        display: none;
+    }
+
+    .jumbotron{
+        display: flex;
+    }
+}
+
+//Inicio de media queries max-width: 765px
+
+@media only screen and (max-width: 765px) {
+    .col-lg-4 {
+        width: 100%;
+    }
+
+    .widthCard{
+        width: 100%;
+        float: left;
+    }
+
+    .widthCard img{
+        width: 50%;
+    }
+
+    .row {
+        width: 100%;
+    }
+
+    .card-group{
+        display: block;
+    }
+
+    #cardTopReviews, #cardPlaceToVisit {
+        display: none;
+    }
+
+    #titleForecast{
+        display: none;
+    }
+
+    #cardCollaborators{
+        width: 95%;
+        float: right;
+    }
+
+    #cardCollaborators .row{
+        height: 100px;
+    }
+
+    #addLocations{
+        display: none;
+    }
+
+    #cardAbsolute{
+        position: static;
+    }
+
+    .cardTempStyle{
+        display: none;
+    }
+
+    .textCard{
+        font-size: 20px;
+    }
+
+    .textHumidity{
+        display: none;
+    }
+
+    .jumbotron{
+        display: flex;
+    }
+}
+
+//Inicio de media queries max-width: 577px
+
+@media only screen and (max-width: 577px) {
+    #imgForecast{
+        display: none;
+    }
+
+    #localizationIcon{
+        width: 3%;
+    }
 }
