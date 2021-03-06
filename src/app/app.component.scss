@@ -12,6 +12,10 @@ h1,h2,h3,h4,h5,h6{
     font-family: $font-stack;
 }
 
+.card {
+    border: 0px solid transparent;
+}
+
 #imgContainer{
     height: 300px;
     background-image: url('https://images.squarespace-cdn.com/content/v1/5b12d4a7e749403ddabe68ca/1530042259329-DLVTECN6UO6LOEL2WWUX/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/12310522876_46859106c6_o.jpg');
@@ -48,10 +52,7 @@ h1,h2,h3,h4,h5,h6{
     height: 100%;
     margin: 0;
     float: left;
-    width: 65px;
-    box-shadow: 1px 3px 20px 0 rgba(203,203,203,0.3)!important;
-    -webkit-box-shadow: 1px 3px 20px 0 rgba(203,203,203,0.3)!important;
-    -moz-box-shadow: 1px 3px 20px 0 rgba(203,203,203,0.3)!important;
+    width: 65px; 
 }
 
 .li_left_link:first-child {
@@ -112,8 +113,8 @@ a, button, img, input[type=submit] {
 
 .nameCity {
     position: absolute;
-    left: 150px;
-    top: 100px;
+    left: 80px;
+    top: 80px;
     z-index: 200;
     font-family: $font-stack;
     font-size: 20px;
@@ -132,12 +133,45 @@ a, button, img, input[type=submit] {
 .cardStyle{
     border: 0px solid black;
     border-radius: 10px;
-    margin: 5px;
-    box-shadow: 1px 3px 20px 0 rgba(203,203,203,0.3)!important;
-    -webkit-box-shadow: 1px 3px 20px 0 rgba(203,203,203,0.3)!important;
-    -moz-box-shadow: 1px 3px 20px 0 rgba(203,203,203,0.3)!important;
+    margin: 3px;
+    margin-top: 19px;
+    box-shadow: 1px 3px 20px 0 rgba(2, 0, 0, 0.300)!important;
+    -webkit-box-shadow: 1px 3px 20px 0 rgba(2, 0, 0, 0.300)!important;
+    -moz-box-shadow: 1px 3px 20px 0 rgba(2, 0, 0, 0.300)!important;
+}
+
+#imgVisitPlace{
+    height: 220px;
+    margin-top: 30px; 
+    border-radius: 30px;
+    background-image: url('https://trucoslondres.com/wp-content/uploads/2017/05/E.jpg');
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+}
+
+#imgVisitPlaceReviewsSmall{
+    margin-top: 10px; 
+    border-radius: 30px;
+    background-image: url('https://www.tec.ac.cr/hoyeneltec/sites/default/files/styles/colorbox/public/media/img/main/smart_building_.jpeg');
+    background-repeat: no-repeat, repeat;
+    background-position: 50% 0%;
+}
+
+#imgVisitPlaceReviewsLarge{
+    margin-top: 10px; 
+    border-radius: 30px;
+    background-image: url('https://www.tec.ac.cr/hoyeneltec/sites/default/files/styles/colorbox/public/media/img/main/smart_building_.jpeg');
+    background-repeat: no-repeat, repeat;
+    background-position: left right / right top;
+    background-size: cover;
+}
+
+.imgReviews{
+    background-image: url('https://www.arartur.com.tr/images/content/1284811945.png');
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
 }
 
 .textCard{
-    font-size: 12px;
+    font-size: 11px;
 }

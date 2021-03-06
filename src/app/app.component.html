@@ -19,7 +19,8 @@
           <ul id="liste_left_link">
             <li class="li_left_link">
               <div class="content_left_link hvr-radial-out" *ngFor="let item of responseWeather.weather">
-                <a>{{item.main}}</a>
+                
+                <a><img src="{{urlImageBogota}}" width="60%">{{item.main}}</a>
               </div>
             </li>
             <li class="li_left_link">
@@ -32,30 +33,32 @@
 
           <div class="row boxBorder justify-content-center align-items-center">
             <div class="col-lg-12 bg-light text-light boxBorder" id="imgContainer">
-              <h5 class="nameCity">{{responseWeather.name}}</h5>
+              <div class="row">
+                <h5 class="nameCity col-lg-8">{{responseWeather.name}}</h5>
+              </div>
+              
             </div>
           </div>
           
           <div class="card-group">
             <div class="card" style="margin: 5px;">
               <div class="card-body">
-                <h5 class="card-title"><b>3 Days</b> Forecast</h5>
+                <h5 class="card-title" style="margin-bottom: 50px;"><b>3 Days</b> Forecast</h5>
 
                 <div class="justify-content-center align-items-center">
                   <div class="row text-center justify-content-center cardStyle" *ngFor="let item of forecast; let indice=index">
-                    <div class="col-lg-7 bg-light text-left" *ngFor="let itemDos of item.weather" style="padding: 5px;">
-                      <div class="row">
-                        <div class="col-lg-4 bg-light justify-content-center align-items-center" *ngFor="let itemDos of item.weather" style="border-radius: 10px;">
-                          <img src="https://www.arartur.com.tr/images/content/1284811945.png" width="100%" style="margin-top: 10px;">
-                        </div>
-                        <div class="col-lg-8 bg-light justify-content-center align-items-center" *ngFor="let itemDos of item.weather" style="border-radius: 10px;">
-                          <h6 class="textCard"><b>{{nameDays[indice]}}</b></h6>
-                          <h6 class="textCard">{{itemDos.main}}</h6>
-                        </div>
+                    <div class="row" *ngIf="urlsCityDays" style="padding: 4px;">
+                      <div class="col-lg-4 justify-content-center align-items-center" *ngFor="let itemDos of item.weather" style="border-radius: 10px;">
+                        <img src="{{urlsCityDays[indice]}}" width="100%">
                       </div>
-                      
+  
+                      <div class="col-lg-8 justify-content-center align-items-center text-left" *ngFor="let itemDos of item.weather" style="border-radius: 10px;">
+                        <h6 class="textCard"><b>{{nameDays[indice]}}</b></h6>
+                        <h6 class="textCard">{{itemDos.main}}</h6>
+                      </div>
                     </div>
-                    <div class="card col-lg-4 justify-content-center align-items-center cardTempStyle" style="border: 0px solid #8433FF; border-radius: 10px;">
+                    
+                    <div class="card col-lg-3 justify-content-center align-items-center cardTempStyle" style="border: 0px solid #8433FF; border-radius: 10px; position: absolute; right: 8px; height: 52px;">
                       <h6 class="textCard">{{item.main.temp_max}}°</h6>
                     </div>
                   </div>
@@ -63,26 +66,97 @@
               </div>
             </div>
             
-            <div class="card" style="margin: 5px;">
-              <div class="card-body">
-                <h5 class="card-title"><b>Place to</b> Visit</h5>
+            <div class="card justify-content-center align-items-center" style="margin: 5px;">
+              <div class="container-fluid">
+                
+                  <h5 class="card-title"><b>Place to</b> Visit</h5>
+                <div class="card-body col-lg-12" id="imgVisitPlace">
+                  
+                </div>
+
             </div>
-            <img class="boxBorder" src="https://images.squarespace-cdn.com/content/v1/5b12d4a7e749403ddabe68ca/1530042259329-DLVTECN6UO6LOEL2WWUX/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/12310522876_46859106c6_o.jpg" alt="Card image cap">
             </div>
         
-            <div class="card" style="margin: 5px;">
-              <img class="card-img-top boxBorder" src="https://images.squarespace-cdn.com/content/v1/5b12d4a7e749403ddabe68ca/1530042259329-DLVTECN6UO6LOEL2WWUX/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/12310522876_46859106c6_o.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+            <div class="card justify-content-center align-items-center" style="margin: 5px; padding: 5px;">
+              <div class="row bg-light text-center justify-content-center cardStyle" style="height: 40px;">
+                <div class="card col-lg-4 justify-content-center align-items-center text-center">
+                  <h6 style="font-size: 8px;">+ Top Reviews</h6>
+                </div>
+                
+                <div class="col-lg-2 text-center justify-content-center align-items-center imgReviews" style="border-radius: 5px;">
+                  
+                </div>
+                <div class="col-lg-2 text-center justify-content-center align-items-center imgReviews" style="border-radius: 5px;">
+                  
+                </div>
+                <div class="col-lg-2 text-center justify-content-center align-items-center imgReviews" style="border-radius: 5px;">
+                  
+                </div>
+                <div class="col-lg-2 text-center justify-content-center align-items-center imgReviews" style="border-radius: 5px;">
+                  
+                </div>
+              </div>
+
+              <div class="card-body col-lg-10" id="imgVisitPlaceReviewsSmall">
+                  
+              </div>
+              <div class="container-fluid">
+                <div class="card-body col-lg-12" id="imgVisitPlaceReviewsLarge" style="height: 150px;">
+                  
+                </div>
+                <button class="col-lg-3" style="border: 0px solid transparent; color: #C2DCE5; font-size: 25px; position: absolute; top: 161px; left: 169px; height: 150px; border-radius: 100px; background-color: rgba(132, 51, 255, 0.900);">
+                  +
+                </button>
               </div>
             </div>
 
-            <div class="card" style="margin: 5px;">
-              <img class="card-img-top" src="https://images.squarespace-cdn.com/content/v1/5b12d4a7e749403ddabe68ca/1530042259329-DLVTECN6UO6LOEL2WWUX/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/12310522876_46859106c6_o.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+            <div class="card bg-light" style="margin: 5px;" *ngIf="responseWeatherParis">
+
+              <div class="row bg-light text-center justify-content-center cardStyle">
+                <div class="card col-lg-4 justify-content-center align-items-center cardTempStyle" style="border: 0px solid #8433FF; border-radius: 10px; height: 70px; position: relative; left: 0px; top: 0px; z-index: 100; background-color: #C2DCE5;">
+                  <img src="{{urlImageParis}}" width="100%">
+                </div>
+
+                <div class="col-lg-8 text-center" style="padding: 5px; height: 70px; border-radius: 10px;">
+                  <h6 class="font-weight-normal"><b>{{responseWeatherParis.main.temp}}</b>°</h6>
+                  <h6 class="font-weight-normal">{{responseWeatherParis.name}}</h6>
+                  <h6 *ngIf="responseWeatherParis.sys.country == 'FR'" class="textCard">Francia</h6>
+                </div>
+                
+                <div>
+                  <h6 class="textCard" style="margin-top: 20px;">Humidity: {{responseWeatherParis.main.humidity}}% {{responseWeatherParis.base}} | {{responseWeatherParis.wind.speed}}km/h</h6>
+                </div>
               </div>
-            </div>
+
+              <div class="row text-center bg-light justify-content-center cardStyle" style="position: absolute; left: 0px; top: -120px; z-index: 100;">
+                <div class="card col-lg-4 justify-content-center align-items-center cardTempStyle" style="border: 0px solid #8433FF; border-radius: 10px; height: 70px; position: relative; left: 0px; top: 0px; z-index: 100; background-color: #C2DCE5;">
+                  <img src="{{urlImageLyon}}" width="100%">
+                </div>
+
+                <div class="col-lg-8 text-center" style="padding: 5px; height: 70px; border-radius: 10px;">
+                  <h6 class="font-weight-normal"><b>{{responseWeatherLyon.main.temp}}</b>°</h6>
+                  <h6 class="font-weight-normal">{{responseWeatherLyon.name}}</h6>
+                  <h6 *ngIf="responseWeatherParis.sys.country == 'FR'" class="textCard">Francia</h6>
+                </div>
+                
+                <div>
+                  <h6 class="textCard" style="margin-top: 20px;">Humidity: {{responseWeatherLyon.main.humidity}}% {{responseWeatherLyon.base}} | {{responseWeatherLyon.wind.speed}}km/h</h6>
+                </div>
+              </div>
+
+              <div class="row text-center justify-content-center cardStyle" style="padding: 20px; background-color: white;">
+                <div class="card col-lg-12 justify-content-center align-items-center" style="border-radius: 10px; border: 0px solid transparent">
+                  <button style="border-radius: 30px; color: #8433FF; border:0px solid transparent; font-size: 12px; background-color: rgba(194, 177, 219, 0.400); padding: 5px; width: 130px;">Add Locations</button>
+                </div>
+
+                <div class="card col-lg-12 justify-content-center align-items-center" style="border-radius: 10px; border: 0px solid transparent">
+                  <img src="https://thumbs.dreamstime.com/b/horizonte-de-la-ciudad-ilustraci%C3%B3n-del-vector-en-el-fondo-blanco-81171406.jpg" width="100%">
+                </div>
+              </div>
+              
+              </div>
+
+              
           </div>
         
       </div>
