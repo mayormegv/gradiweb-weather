@@ -245,7 +245,16 @@ a, button, img, input[type=submit] {
         display: block;
     }
 
-    #cardTopReviews, #cardPlaceToVisit {
+    #cardPlaceToVisit {
+        display: block;
+        float: right;
+    }
+
+    #cardPlaceToVisit #imgVisitPlace{
+        height: 330px;
+    }
+
+    #cardTopReviews{
         display: none;
     }
 
@@ -253,14 +262,31 @@ a, button, img, input[type=submit] {
         display: none;
     }
 
+    #titlePlaceToVisit{
+        display: none;
+    }
+
     #cardCollaborators{
-        width: 43%;
+        width: 100%;
         height: 100%;
+        float: left;
+    }
+
+    #cardCollaborators img{
         float: right;
+        width: 40%;
+    }
+
+    #cardCollaborators .cardStyle:nth-child(1) {
+        height: 100px;
+    }
+
+    #cardCollaborators .cardStyle:nth-child(2) {
+        height: 100px;
     }
 
     #cardAbsolute{
-        top: -140px;
+        position: static;
     }
 
     .cardTempStyle{
@@ -269,6 +295,10 @@ a, button, img, input[type=submit] {
 
     .textCard{
         font-size: 20px;
+    }
+
+    .textHumidity{
+        display: none;
     }
 
     .jumbotron{
@@ -300,7 +330,7 @@ a, button, img, input[type=submit] {
         display: block;
     }
 
-    #cardTopReviews, #cardPlaceToVisit {
+    #cardTopReviews {
         display: none;
     }
 
@@ -311,10 +341,6 @@ a, button, img, input[type=submit] {
     #cardCollaborators{
         width: 95%;
         float: right;
-    }
-
-    #cardCollaborators .row{
-        height: 100px;
     }
 
     #addLocations{
@@ -333,22 +359,15 @@ a, button, img, input[type=submit] {
         font-size: 20px;
     }
 
-    .textHumidity{
-        display: none;
-    }
-
     .jumbotron{
         display: flex;
     }
 }
 
-//Inicio de media queries max-width: 765px
+//Inicio de media queries max-width: 768px
 
-@media only screen and (max-width: 765px) {
-    .col-lg-4 {
-        width: 100%;
-    }
-
+@media only screen and (max-width: 768px) {
+    
     .widthCard{
         width: 100%;
         float: left;
@@ -362,23 +381,6 @@ a, button, img, input[type=submit] {
         width: 100%;
     }
 
-    .card-group{
-        display: block;
-    }
-
-    #cardTopReviews, #cardPlaceToVisit {
-        display: none;
-    }
-
-    #titleForecast{
-        display: none;
-    }
-
-    #cardCollaborators{
-        width: 95%;
-        float: right;
-    }
-
     #cardCollaborators .row{
         height: 100px;
     }
@@ -387,35 +389,36 @@ a, button, img, input[type=submit] {
         display: none;
     }
 
-    #cardAbsolute{
-        position: static;
-    }
-
     .cardTempStyle{
         display: none;
     }
 
-    .textCard{
-        font-size: 20px;
-    }
-
     .textHumidity{
         display: none;
-    }
-
-    .jumbotron{
-        display: flex;
     }
 }
 
 //Inicio de media queries max-width: 577px
 
 @media only screen and (max-width: 577px) {
-    #imgForecast{
-        display: none;
+    
+    .widthCard .row{
+        border-radius: 10px;
+        display: block;
+        width: 100%;
+        float: left;
     }
 
-    #localizationIcon{
-        width: 3%;
+    #logoGradiWeb{
+        top: 1px;
+    }
+
+    #imgForecast{
+        display: block;
+        float: right;
+    }
+
+    .container{
+        display: block;
     }
 }
