@@ -228,6 +228,10 @@ a, button, img, input[type=submit] {
 //Inicio de media queries max-width: 1200px
 
 @media only screen and (max-width: 1200px) {
+    #logoGradiWeb{
+        right: 120px;
+    }
+
     .col-lg-4 {
         width: 100%;
     }
