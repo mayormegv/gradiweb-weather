@@ -225,6 +225,50 @@ a, button, img, input[type=submit] {
     font-size: 11px;
 }
 
+#btnAddLocation {
+    border-radius: 30px;
+    color: #8433FF; 
+    border:0px solid transparent;
+    font-size: 12px; 
+    background-color: rgba(194, 177, 219, 0.400); 
+    padding: 5px; 
+    width: 130px;
+}
+
+#cardWeatherLyon{
+    border: 0px solid #8433FF; 
+    border-radius: 10px; 
+    height: 70px; 
+    position: relative; 
+    left: 0px; 
+    top: 0px; 
+    z-index: 100; 
+    background-color: #C2DCE5;
+}
+
+#cardWeatherParis{
+    border: 0px solid #8433FF; 
+    border-radius: 10px; 
+    height: 70px; 
+    position: relative; 
+    left: 0px; 
+    top: 0px; 
+    z-index: 100; 
+    background-color: #C2DCE5;
+}
+
+#btnDetails{
+    border: 0px solid transparent; 
+    color: #C2DCE5; 
+    font-size: 25px; 
+    position: absolute; 
+    top: 167px; 
+    left: 171px; 
+    height: 150px; 
+    border-radius: 100px; 
+    background-color: rgba(132, 51, 255, 0.900);
+}
+
 //Inicio de media queries max-width: 1200px
 
 @media only screen and (max-width: 1200px) {

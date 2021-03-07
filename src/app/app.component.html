@@ -129,7 +129,7 @@
                     <h6 class="col-lg-12 col-md-12 col-sm-12 col-12 tagImage">City</h6>
                   </div>
                 </div>
-                <button class="col-lg-3 col-md-3 col-sm-12 col-12" style="border: 0px solid transparent; color: #C2DCE5; font-size: 25px; position: absolute; top: 167px; left: 171px; height: 150px; border-radius: 100px; background-color: rgba(132, 51, 255, 0.900);">
+                <button class="col-lg-3 col-md-3 col-sm-12 col-12" id="btnDetails">
                   +
                 </button>
               </div>
@@ -138,7 +138,7 @@
             <div class="card widthCard bg-light" id="cardCollaborators" style="margin: 5px;" *ngIf="responseWeatherParis">
 
               <div class="row bg-light text-center justify-content-center cardStyle">
-                <div class="card col-lg-4 col-md-4 col-sm-12 col-12 justify-content-center align-items-center cardTempStyle" style="border: 0px solid #8433FF; border-radius: 10px; height: 70px; position: relative; left: 0px; top: 0px; z-index: 100; background-color: #C2DCE5;">
+                <div class="card col-lg-4 col-md-4 col-sm-12 col-12 justify-content-center align-items-center cardTempStyle" id="cardWeatherParis">
                   <img src="{{urlImageParis}}" width="100%">
                 </div>
 
@@ -154,11 +154,11 @@
               </div>
 
               <div class="row text-center bg-light justify-content-center cardStyle" id="cardAbsolute">
-                <div class="card col-lg-4 col-md-4 col-sm-12 col-12 justify-content-center align-items-center cardTempStyle" style="border: 0px solid #8433FF; border-radius: 10px; height: 70px; position: relative; left: 0px; top: 0px; z-index: 100; background-color: #C2DCE5;">
+                <div class="card col-lg-4 col-md-4 col-sm-12 col-12 justify-content-center align-items-center cardTempStyle" id="cardWeatherLyon">
                   <img src="{{urlImageLyon}}" width="100%">
                 </div>
 
-                <div class="col-lg-8 col-md-8 col-sm-12 col-12 text-center" style="padding: 5px; height: 70px; border-radius: 10px;">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-12 text-center" style="padding: 5px; height: 70px; border-radius: 10px;" *ngIf="responseWeatherParis">
                   <h6 class="font-weight-normal"><b>{{responseWeatherLyon.main.temp}}</b>°</h6>
                   <h6 class="font-weight-normal">{{responseWeatherLyon.name}}</h6>
                   <h6 *ngIf="responseWeatherParis.sys.country == 'FR'" class="textCard">Francia</h6>
@@ -171,7 +171,7 @@
 
               <div class="row text-center justify-content-center cardStyle" style="padding: 20px; background-color: white;">
                 <div class="card col-lg-12 col-md-12 col-sm-12 col-12 justify-content-center align-items-center" style="border-radius: 10px; border: 0px solid transparent">
-                  <button style="border-radius: 30px; color: #8433FF; border:0px solid transparent; font-size: 12px; background-color: rgba(194, 177, 219, 0.400); padding: 5px; width: 130px;">Add Locations</button>
+                  <button id="btnAddLocation">Add Locations</button>
                 </div>
 
                 <div class="card col-lg-12 col-md-12 col-sm-12 col-12 justify-content-center align-items-center" id="addLocations" style="border-radius: 10px; border: 0px solid transparent">
@@ -187,38 +187,6 @@
       </div>
 
   </div>
-
-  
-
-  <!--<div *ngIf="responseWeather" class="card-container card-small">
-    <h1>{{responseWeather.main.temp}} grados</h1>
-    <h1>{{responseWeather.name}}</h1>
-  </div>
-  <div *ngIf="!responseWeather" class="card-container card-small">
-    <div class="spinner-border text-light"></div>
-  </div>
-
-  <div *ngIf="responseWeatherParis" class="card-container card-small">
-    <h1>{{responseWeatherParis.main.temp}} grados</h1>
-    <h1>{{responseWeatherParis.name}}</h1>
-  </div>
-  <div *ngIf="!responseWeatherParis" class="card-container card-small">
-    <h1>Cargando...</h1>
-  </div>
-
-  <div *ngIf="responseForecast" class="card-container card-small">
-    <h1>{{responseForecast.cnt}} grados</h1>
-    <h1>{{responseForecast.cod}}</h1>
-  </div>
-  <div *ngIf="!responseForecast" class="card-container card-small">
-    <h1>Cargando...</h1>
-  </div>
-
-  <div *ngFor="let item of responseForecast.list; let i = index">
-      <h1>{{item.main.temp}}</h1>
-  </div>
-    
-  </div>-->
 </div>
 
 <router-outlet></router-outlet>
