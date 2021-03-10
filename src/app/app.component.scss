@@ -26,10 +26,8 @@ h1,h2,h3,h4,h5,h6{
 
 #imgContainer{
     height: 300px;
-    background-image: url('https://images.squarespace-cdn.com/content/v1/5b12d4a7e749403ddabe68ca/1530042259329-DLVTECN6UO6LOEL2WWUX/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/12310522876_46859106c6_o.jpg');
-    
-    background-repeat: no-repeat, repeat;
     background-size: cover;
+    padding: 0px;
 }
 
 .containerSecondary{
@@ -104,7 +102,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 #linkTemp {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 textarea, a, button, input {
@@ -269,6 +267,32 @@ a, button, img, input[type=submit] {
     background-color: rgba(132, 51, 255, 0.900);
 }
 
+.caja{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .box img{
+    width: 100%;
+    height: auto;
+  }
+
+  @supports(object-fit: cover){
+      .box img{
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+  }
+
 //Inicio de media queries max-width: 1200px
 
 @media only screen and (max-width: 1200px) {
@@ -351,6 +375,10 @@ a, button, img, input[type=submit] {
 
     .jumbotron{
         display: flex;
+    }
+
+    #cardWeatherParis, #cardWeatherLyon{
+        height: 100px;
     }
 }
 

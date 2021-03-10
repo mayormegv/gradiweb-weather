@@ -35,7 +35,11 @@
         </div>
 
           <div class="row boxBorder justify-content-center align-items-center">
-            <div class="col-lg-12 bg-light text-light boxBorder" id="imgContainer">
+            <div class="col-lg-12 text-light boxBorder" id="imgContainer">
+              <div class="box">
+                <img style="border-radius: 20px;" src="{{imgContainer}}">
+              </div>
+              
               <div class="row">
                 <img src="https://image.flaticon.com/icons/png/512/16/16778.png" id="localizationIcon">
                 <h5 class="nameCity col-lg-8">{{responseWeather.name}}</h5>
@@ -137,7 +141,7 @@
 
             <div class="card widthCard bg-light" id="cardCollaborators" style="margin: 5px;" *ngIf="responseWeatherParis">
 
-              <div class="row bg-light text-center justify-content-center cardStyle">
+              <div (click)="weatherForCity('paris')" class="row bg-light text-center justify-content-center cardStyle" style="cursor: pointer;">
                 <div class="card col-lg-4 col-md-4 col-sm-12 col-12 justify-content-center align-items-center cardTempStyle" id="cardWeatherParis">
                   <img src="{{urlImageParis}}" width="100%">
                 </div>
@@ -153,19 +157,19 @@
                 </div>
               </div>
 
-              <div class="row text-center bg-light justify-content-center cardStyle" id="cardAbsolute" *ngIf="responseWeatherLyon">
+              <div (click)="weatherForCity('sydney')" class="row text-center bg-light justify-content-center cardStyle" id="cardAbsolute" *ngIf="responseWeatherSydney" style="cursor: pointer;">
                 <div class="card col-lg-4 col-md-4 col-sm-12 col-12 justify-content-center align-items-center cardTempStyle" id="cardWeatherLyon">
-                  <img src="{{urlImageLyon}}" width="100%">
+                  <img src="{{urlImageSydney}}" width="100%">
                 </div>
 
                 <div class="col-lg-8 col-md-8 col-sm-12 col-12 text-center" style="padding: 5px; height: 70px; border-radius: 10px;" *ngIf="responseWeatherParis">
-                  <h6 class="font-weight-normal"><b>{{responseWeatherLyon.main.temp}}</b>°</h6>
-                  <h6 class="font-weight-normal">{{responseWeatherLyon.name}}</h6>
-                  <h6 *ngIf="responseWeatherParis.sys.country == 'FR'" class="textCard">Francia</h6>
+                  <h6 class="font-weight-normal"><b>{{responseWeatherSydney.main.temp}}</b>°</h6>
+                  <h6 class="font-weight-normal">{{responseWeatherSydney.name}}</h6>
+                  <h6 *ngIf="responseWeatherParis.sys.country == 'sd'" class="textCard">Sydney</h6>
                 </div>
                 
                 <div>
-                  <h6 class="textCard textHumidity" style="margin-top: 20px;">Humidity: {{responseWeatherLyon.main.humidity}}% {{responseWeatherLyon.base}} | {{responseWeatherLyon.wind.speed}}km/h</h6>
+                  <h6 class="textCard textHumidity" style="margin-top: 20px;">Humidity: {{responseWeatherSydney.main.humidity}}% {{responseWeatherSydney.base}} | {{responseWeatherSydney.wind.speed}}km/h</h6>
                 </div>
               </div>
 
